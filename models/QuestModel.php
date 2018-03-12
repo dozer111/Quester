@@ -8,17 +8,64 @@ class QuestModel
     const QUEST_LIMIT=4;
 
 
-
-
-    public function createQuest($title,$text,$picture,$email,$author=0)
+    /**
+     * @param $title
+     * @param $text
+     * @param $picture
+     * @param $email
+     * @param int $author
+     * @return bool
+     * =========================================================================================
+     * Создание неактивной
+     *                      Задачи, если автор активирован/неактивирован(или гость)
+     *          активной
+     *
+     *
+     * работает в паре с $this->activateQuest(){}
+     * =========================================================================================
+     */
+    public function createQuest($title,$text,$picture,$email,$author,$hash)
     {
         $db=DB::getInstance();
-        $query="INSERT INTO `quest` (`quest_title`,`quest_text`,`quest_picture`,`quest_email`,
-    `quest_author`) VALUES('".$title."','".$text."','".$picture."',
-        '".$email."', '".$author."')";
+        # hash-код для дальнейшей активации задания, если $author=0
+
+        // строка запроса, если польователь -- гость
+        $inactiveUserQuery="INSERT INTO `quest` (`quest_title`,`quest_text`,
+        `quest_picture`,`quest_email`,
+            `quest_author`,`quest_activation_code`) VALUES('".$title."','".$text."','".$picture."',
+        '".$email."', '".$author."','".$hash."')";
+
+
+        // строка запроса, если пользователь -- зарегистрированный
+        $activeUserQuery="INSERT INTO `quest` 
+        (`quest_title`,`quest_text`,`quest_picture`,`quest_email`,
+        `quest_author`,`quest_activation_status`) 
+        VALUES('".$title."','".$text."','".$picture."',
+        '".$email."', ".$author.", 1 )";
+
+        $query=($author==0)?$inactiveUserQuery:$activeUserQuery;
+
+
+
         return (bool)$db->query($query);
     }
 
+    /**
+     * @param $id
+     * @return bool|\mysqli_result
+     * ====================================================================================
+     * Активация задания через MainController -> actionIndex ->actionCreate
+     * ====================================================================================
+     */
+    public function activateQuest($hash)
+    {
+        $db=DB::getInstance();
+        $getIdFromHash="SELECT `quest`.`id` FROM `quest` WHERE `quest_activation_code`='".$hash."' LIMIT 1";
+        $select=$db->query($getIdFromHash)->fetch_assoc();
+        if($select!=null)
+        $query="UPDATE `quest` SET `quest_activation_status`=1 WHERE `id`=".$select['id'];
+        return (bool)$db->query($query);
+    }
 
     public function deleteQuest(){}
 
@@ -43,10 +90,21 @@ class QuestModel
         return $quest=$db->query($query)->fetch_assoc();
     }
 
+    /**
+     * @param int $page
+     * @return array
+     * ====================================================================================
+     * Метод, который возвращает одобренные задания
+     * Используется для главного списка заданий в questController --> actionIndex
+     * ====================================================================================
+     */
     public function getAllQuests($page=1)
     {
-        return $quests=Pagination::getItemsWithPagination
-        ('quest',$page,'DESC',self::QUEST_LIMIT);
+        $params=['where'=>'quest_activation_status=1'];
+        $params['leftJoin']=['colums'=>['`user`.`user_login`'],'table'=>'user',
+            'on'=>'`quest`.`quest_author`=`user`.`id`'];
+        return $quests=Pagination::getItemsWithDeepPagination
+        ('quest',$page,$params,'DESC',self::QUEST_LIMIT);
 
     }
 
@@ -128,6 +186,20 @@ class QuestModel
 
         return (bool)$db->query($update);
     }
+
+
+    public function getFilterQuests(array $params=[])
+    {
+        /**
+         * Пример реализации массива
+         * $params[fields]=[date,dozer111,test@test.test];
+         */
+        $result=[];
+
+
+    }
+
+
 
 
 }

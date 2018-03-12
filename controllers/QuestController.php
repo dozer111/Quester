@@ -16,10 +16,21 @@ class QuestController extends CoreController
         $requestPage=(isset($this->getParams()[0]))?$this->getParams()[0]:1;
         $page=($number=intval($requestPage))?$number:1;
 
-
-        # 2) берем новости для текущей странички
+        # 2) берем новости для текущей странички (при условии, что никаких фильтров не задано)
         $questModel=new QuestModel();
         $news=$questModel->getAllQuests($page);
+
+        # 2.1 берем задания, в которых присутствует фильтр
+        /**
+         * Виды фильтров
+         * date ==> ASC/DESC
+         * userName ==> DESC
+         * @mail ==> DESC
+         * Status ==> DESC
+         */
+
+
+
 
 
 
@@ -28,6 +39,26 @@ class QuestController extends CoreController
                     ->display('quest/index.tpl',compact('news','page'));
 
     }
+
+
+    /**
+     * Метод, который идёт чисто для AJAX загрузки фильтрованных данных
+     *
+     */
+    public function actionGetfilterdata()
+    {
+
+        if(isset($_POST['login']))
+            echo 'login';
+
+
+    }
+
+
+
+
+
+
 
 
     /**

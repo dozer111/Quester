@@ -7,6 +7,12 @@
         <input type="text" name="title" required>
         <input type="text" name="text" required>
         <input type="file" name="file" id="quest_file" >
+        {*
+        |========================================================
+        |Пробрасываем значение id юзера для активации задания,
+        |или 0, если это был не зарегистрированный юзер
+        |========================================================
+        *}
         {if isset($smarty.session.user)}
             <input type="text" hidden name="userLogin" value="{$smarty.session.user['id']}">
             {else}

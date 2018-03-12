@@ -10,6 +10,7 @@ namespace controllers;
  */
 use models\forms\SignInForm;
 use models\UserModel;
+use components\Mailer;
 
 class AuthController extends CoreController
 {
@@ -37,9 +38,21 @@ class AuthController extends CoreController
         $password=$_POST['password'];
         # 2) Записываем пользователя
         $userModel=new UserModel();
-        if($userModel->createUser($login,$email,$password))$newUser=$userModel->getUser($login);
+        $userActivationHash=md5(time());
+        if($userModel->createUser($login,$email,$password,$userActivationHash))
+            $newUser=$userModel->getUser($login);
         $this->getSession()->setSession('user',$newUser);
-        if(!empty($newUser))
+
+
+
+        # 3) посылаем письмо с подтверждением активации
+        $mailer=new Mailer();
+        $sendMailToUserActivate=$mailer->sendMail($email,$newUser['id'],'userActivation',$userActivationHash);
+
+
+        if($sendMailToUserActivate!=true)die(var_dump($sendMailToUserActivate));
+
+        if(!empty($newUser) && $sendMailToUserActivate==true)
              header('location:/main/index/OK');
         else
             header('location:/main/index/ERROR');
@@ -67,7 +80,7 @@ class AuthController extends CoreController
         $pass=$_POST['password'];
         $userModel=new UserModel();
         $user=$userModel->loginUser($login,$pass);
-        $this->getSession()->setSession('user',$user);
+        $set=$this->getSession()->setSession('user',$user);
         header('location:/');
     }
     public function actionLogout()

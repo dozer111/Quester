@@ -35,7 +35,7 @@
                     <li><a href="/auth/login">Login</a></li>
                     {else}
 
-                        <li><a href="/user/{$smarty.session.user['id']}">{$smarty.session.user['user_login']}</a></li>
+                        <li><a href="/user/index">{$smarty.session.user['user_login']}</a></li>
                         <li><a href="/auth/logout">Exit</a></li>
                         {*
                         ***********************************************************************

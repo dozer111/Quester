@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-03-09 18:28:02
+/* Smarty version 3.1.30, created on 2018-03-12 23:11:32
   from "C:\xampp\htdocs\views\quest\index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5aa2c422dcd356_17320803',
+  'unifunc' => 'content_5aa6fb14654d87_36632092',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a39f397a012fcb8eaae911005d0be414256662f2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\views\\quest\\index.tpl',
-      1 => 1520616481,
+      1 => 1520892692,
       2 => 'file',
     ),
   ),
@@ -21,23 +21,66 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../layout.tpl' => 1,
   ),
 ),false)) {
-function content_5aa2c422dcd356_17320803 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5aa6fb14654d87_36632092 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_388050625aa2c422dcbb01_06348736', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6796858215aa6fb145cf139_91434532', "head");
+?>
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14227030085aa6fb14653524_22984225', 'body');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:../layout.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
+/* {block "head"} */
+class Block_6796858215aa6fb145cf139_91434532 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+    <?php echo '<script'; ?>
+ src="../web/js/questChange.js"><?php echo '</script'; ?>
+>
+<?php
+}
+}
+/* {/block "head"} */
 /* {block 'body'} */
-class Block_388050625aa2c422dcbb01_06348736 extends Smarty_Internal_Block
+class Block_14227030085aa6fb14653524_22984225 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
  <div class="quest_wrapper">
+
+
+
+<div class="quest_filter">
+    Отсортировать по:
+
+
+        <ul class="">
+            <li><button class="btn btn-primary" id="filter_date_asc" >С конца</button></li>
+            <li><button class="btn btn-primary"  id="filter_date_desc" >С начала</button></li>
+
+        </ul>
+
+    <div class="test"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="quest_container">
     <?php $_smarty_debug = new Smarty_Internal_Debug;
  $_smarty_debug->display_debug($_smarty_tpl);
@@ -59,10 +102,21 @@ foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_var
             <a href="/quest/show/<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 "><h1><?php echo $_smarty_tpl->tpl_vars['item']->value['quest_title'];?>
 </h1></a>
-            <h2><?php echo $_smarty_tpl->tpl_vars['item']->value['quest_email'];?>
-</h2>
+            <h2>
+                <?php if ($_smarty_tpl->tpl_vars['item']->value['user_login'] == null) {?>
+                    <span style="background-color: red" class="filter_userName">  Guest </span>
+        <span style="background-color: aqua" class="filter_email"> <?php echo $_smarty_tpl->tpl_vars['item']->value['quest_email'];?>
+ </span>
+                <?php } else { ?>
+                    <span style="background-color: red" class="filter_userName">  <?php echo $_smarty_tpl->tpl_vars['item']->value['user_login'];?>
+</span>
+                <?php }?>
+
+
+               </h2>
             <p><?php echo $_smarty_tpl->tpl_vars['item']->value['quest_text'];?>
 </p>
+
 
         </div>
     <?php

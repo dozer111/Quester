@@ -18,30 +18,18 @@ class UserModel
 
     }
 
-    public function createUser($login,$email,$password)
+    public function createUser($login,$email,$password,$userActivationHash)
     {
         # 1 регистрируем уникального пользователя
         if($this->userExists($login))return false;
         $db=DB::getInstance();
         $password=password_hash($password,PASSWORD_DEFAULT);
-        $query="INSERT INTO `user` (`user_login`,`user_email`,`user_password`) 
-        VALUES('".$login."','".$email."','".$password."')";
 
+        $query="INSERT INTO `user` (`user_login`,`user_email`,`user_password`,
+        `user_activation_hash`) 
+        VALUES('".$login."','".$email."','".$password."','".$userActivationHash."')";
 
-        # 2 отправляем на почту письмо с ссылкой на активацию
-        $mailer=new Mailer();
-        $to=$email;
-        $title='SiteName 1432. User Activation';
-        $message=$mailer->getHtml('UserActivation.tpl');
-        $EOL = "\r\n"; // ограничитель строк
-        $headers    = "MIME-Version: 1.0;" . $EOL . "";
-        $headers   .= "Content-Type: text/html; charset=utf-8" . $EOL . "";
-        $headers   .= "From: alkhonko@gmail.com\nReply-To: alkhonko@gmail.com\n";
-
-        $result=$mailer->sendMail($to,$title,$message,$headers);
-        die(var_dump($result));
-       # $db->query($query);
-        return (bool)$result;
+        return(bool)$db->query($query);
     }
 
     public function loginUser($login,$password)
@@ -57,6 +45,21 @@ class UserModel
         $db=DB::getInstance();
         $query="SELECT * FROM `user` WHERE `".$column."`='".$login."'";
         return $user=$db->query($query)->fetch_assoc();
+
+    }
+
+
+    public function activateUserFromMail($hash)
+    {
+        $db=DB::getInstance();
+        #1 находим незарегистрированного юзвера с тами хешом
+        $userActivate=$db->query("SELECT `user`.`id` FROM `user` 
+        WHERE `user`.`user_activation_hash`='".$hash."' 
+        AND `user`.`user_activation_status`=0  LIMIT 1")->fetch_assoc();
+        #2 регистрируем
+        $regResult=$db->query('UPDATE `user` SET `user_activation_status`=1 
+          WHERE `id`='.$userActivate['id']);
+        return (bool)$regResult;
 
     }
 

@@ -21,13 +21,15 @@ class Session
 
     public function getSession($key,$default=null)
     {
-        return (isset($_COOKIE[$key]))?$_COOKIE[$key]:$default;
+
+        return (isset($_SESSION[$key]))?$_SESSION[$key]:$default;
     }
 
 
     public function setSession($key,$value)
     {
         if(!$key)return false;
+        setcookie($key,$value);
         $_SESSION[$key]=$value;
         return true;
     }

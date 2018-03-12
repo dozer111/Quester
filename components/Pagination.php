@@ -102,7 +102,9 @@ class Pagination
             $result=[];
             $result['items']=$db->query($itemsQuery.$suffix)->fetch_all(MYSQLI_ASSOC);
             $count=$db->query($countQuery)->fetch_assoc();
-
+            #echo "<pre>";
+            #die(print_r($db->query("SELECT * FROM quest
+            #WHERE quest_status=1 AND quest_activation_status=1")->fetch_all()));
             $maxPages=ceil($count['count']/$limit);
             $result['count']=$count;
             $result['maxPages']=$maxPages;

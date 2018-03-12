@@ -25,7 +25,7 @@ $(function () {
                 {
                     $('#sign').attr('src','/auth/SignIn/');
                 }
-                alert(data);
+
                $('#result').text(data);
            }
        });

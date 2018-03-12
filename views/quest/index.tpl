@@ -1,6 +1,39 @@
 {extends file="../layout.tpl"}
+{block name="head"}
+    <script src="../web/js/questChange.js"></script>
+{/block}
 {block name=body}
  <div class="quest_wrapper">
+
+
+{*
+============================================================================================
+Блок, в котором размещаются фильтры новостей
+============================================================================================
+*}
+<div class="quest_filter">
+    Отсортировать по:
+
+
+        <ul class="">
+            <li><button class="btn btn-primary" id="filter_date_asc" >С конца</button></li>
+            <li><button class="btn btn-primary"  id="filter_date_desc" >С начала</button></li>
+
+        </ul>
+
+    <div class="test"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="quest_container">
     {debug}
 {*
@@ -15,8 +48,18 @@
                 <img class="quest_picture_short" src="../../web/img/{$item['quest_picture']}" alt="{$item['quest_title']}">
             {/if}
             <a href="/quest/show/{$item['id']}"><h1>{$item['quest_title']}</h1></a>
-            <h2>{$item['quest_email']}</h2>
+            <h2>
+                {if $item['user_login']==null}
+                    <span style="background-color: red" class="filter_userName">  Guest </span>
+        <span style="background-color: aqua" class="filter_email"> {$item['quest_email']} </span>
+                {else}
+                    <span style="background-color: red" class="filter_userName">  {$item['user_login']}</span>
+                {/if}
+
+
+               </h2>
             <p>{$item['quest_text']}</p>
+
 
         </div>
     {/foreach}
