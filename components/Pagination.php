@@ -56,6 +56,13 @@ class Pagination
      *  order ==> определяет столбец таблицы, по которому произвести сортировку
      *  leftJoin
      * ========================================================================================
+     * ========================================================================================
+     *                          Пример использования функции:
+     $requestArray=[];
+     $requestArray['where']='quest_activation_status =1';
+     $requestArray['andWhere']=['quest_status = 0'];
+     $requestArray['leftJoin']=['colums'=>['`user`.`user_login`'],'table'=>'user',
+     'on'=>'`quest`.`quest_author`=`user`.`id`'];
      */
         public static function getItemsWithDeepPagination($table,$page,array $params=[],$order='DESC',$limit=15)
         {
@@ -81,7 +88,7 @@ class Pagination
             $countQuery="SELECT COUNT(*) as count FROM `".$table."`";
             $suffix='';
             # 1.1 усложняем запрос
-            if(isset($params['where'])) $suffix.=' WHERE '.$params['where'].' ';
+            if(isset($params['where'])) $suffix.=' WHERE '.$params['where']." ";
             if(isset($params['andWhere']))
             {
                 foreach ($params['andWhere'] as $query1)
@@ -100,6 +107,7 @@ class Pagination
             # 2 получаем необходимые значения
             $db=DB::getInstance();
             $result=[];
+
             $result['items']=$db->query($itemsQuery.$suffix)->fetch_all(MYSQLI_ASSOC);
             $count=$db->query($countQuery)->fetch_assoc();
             #echo "<pre>";
@@ -112,4 +120,57 @@ class Pagination
             return $result;
 
         }
+
+
+
+
+        public static  function getButtons($currentPage,$maxPageSize)
+        {
+
+
+            // страницы пагинации
+            $pageList=[];
+            /**
+             * Логика пагинации
+             */
+            if($maxPageSize<5)
+            {
+                for ($i=$maxPageSize;$i>0;$i--)
+                {
+                    $pageList['list'][]=$i;
+                }
+            }
+            else
+            {
+                if($currentPage<=3)
+                {
+                    $pageList['list']=[1,2,3,4];
+                    $pageList['list'][]=$maxPageSize;
+                }
+                elseif($currentPage>3 && $currentPage<$maxPageSize-2 )
+                {   $pageList['list'][]=1;
+                    for ($i=$currentPage-2;$i<=$currentPage;$i++)
+                    {
+                        $pageList['list'][]=$i;
+                    }
+                    $pageList['list'][]=$currentPage+1;
+                    $pageList['list'][]=$maxPageSize;
+                }
+                else
+                {
+                    $pageList['list'][]=1;
+                    $pageList['list'][]=$maxPageSize-3;
+                    $pageList['list'][]=$maxPageSize-2;
+                    $pageList['list'][]=$maxPageSize-1;
+                    $pageList['list'][]=$maxPageSize;
+                }
+            }
+            return $pageList;
+        }
+
+
+
+
+
+
 }

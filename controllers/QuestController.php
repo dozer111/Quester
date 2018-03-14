@@ -1,5 +1,6 @@
 <?php
 namespace controllers;
+use components\Pagination;
 use models\QuestModel;
 
 class QuestController extends CoreController
@@ -47,10 +48,41 @@ class QuestController extends CoreController
      */
     public function actionGetfilterdata()
     {
+        $page=$_POST['page'];
+        # если на вход пришла только страница
 
-        if(isset($_POST['login']))
-            echo 'login';
+        if($_POST['filter1']=='false' && $_POST['filter2']=='false' && $_POST['filter3']=='false') {
+            $requestArray=['where'=>'quest_activation_status=1'];
+            $quests = Pagination::getItemsWithDeepPagination('quest', $page,$requestArray,'DESC',4);
+            $quests['pages']=Pagination::getButtons($page,$quests['maxPages']);
+            $quests['currentPage']=$page;
+            echo json_encode($quests);
+        }
+        # делаем выборку по фильру @mail
+        elseif($_POST['filter1']!='false')
+        {
+            $test=trim($_POST['filter1']);
+            $requestArray=['where'=>"quest_email='".$test."'"];
+            $requestArray['andWhere']=['quest_activation_status=1'];
 
+            $quests=Pagination::getItemsWithDeepPagination('quest',$page,$requestArray,'DESC',4);
+            $quests['pages']=Pagination::getButtons($page,$quests['maxPages']);
+            $quests['currentPage']=$page;
+            echo json_encode($quests);
+        }
+
+
+        elseif ($_POST['filter2']!='false')
+        {
+            $requestArray=['where'=>"quest_author='".$_POST['filter2']."'"];
+            $quests=Pagination::getItemsWithDeepPagination('quest',$page,$requestArray,'DESC',4);
+            $quests['pages']=Pagination::getButtons($page,$quests['maxPages']);
+            $quests['currentPage']=$page;
+            echo json_encode($quests);
+        }
+
+        else
+            echo "DIE ERROR";
 
     }
 
