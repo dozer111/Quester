@@ -3,11 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="fec42e1b-7501-4e49-ad4f-7b1ad3e3f954" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/components/FileUpload.php" afterPath="$PROJECT_DIR$/components/FileUpload.php" />
       <change beforePath="$PROJECT_DIR$/components/Pagination.php" afterPath="$PROJECT_DIR$/components/Pagination.php" />
-      <change beforePath="$PROJECT_DIR$/controllers/QuestController.php" afterPath="$PROJECT_DIR$/controllers/QuestController.php" />
+      <change beforePath="$PROJECT_DIR$/controllers/MainController.php" afterPath="$PROJECT_DIR$/controllers/MainController.php" />
+      <change beforePath="$PROJECT_DIR$/controllers/UserController.php" afterPath="$PROJECT_DIR$/controllers/UserController.php" />
+      <change beforePath="$PROJECT_DIR$/models/QuestModel.php" afterPath="$PROJECT_DIR$/models/QuestModel.php" />
+      <change beforePath="$PROJECT_DIR$/views/main/index.tpl" afterPath="$PROJECT_DIR$/views/main/index.tpl" />
       <change beforePath="$PROJECT_DIR$/views/quest/index.tpl" afterPath="$PROJECT_DIR$/views/quest/index.tpl" />
+      <change beforePath="$PROJECT_DIR$/views/user/index.tpl" afterPath="$PROJECT_DIR$/views/user/index.tpl" />
       <change beforePath="$PROJECT_DIR$/web/css/style.css" afterPath="$PROJECT_DIR$/web/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/web/js/questChange.js" afterPath="$PROJECT_DIR$/web/js/questChange.js" />
+      <change beforePath="$PROJECT_DIR$/web/js/upload.js" afterPath="$PROJECT_DIR$/web/js/upload.js" />
+      <change beforePath="$PROJECT_DIR$/web/templates_c/76d31a52e915be8e5224ca04fcc1aacb58d4f06f_0.file.index.tpl.php" afterPath="$PROJECT_DIR$/web/templates_c/76d31a52e915be8e5224ca04fcc1aacb58d4f06f_0.file.index.tpl.php" />
+      <change beforePath="$PROJECT_DIR$/web/templates_c/de815d26e459162243795360bb57a6355e64f7ed_0.file.index.tpl.php" afterPath="$PROJECT_DIR$/web/templates_c/de815d26e459162243795360bb57a6355e64f7ed_0.file.index.tpl.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,62 +28,35 @@
       <file leaf-file-name="QuestModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/QuestModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="112" column="20" lean-forward="true" selection-start-line="112" selection-start-column="20" selection-end-line="112" selection-end-column="20" />
+            <state relative-caret-position="317">
+              <caret line="140" column="7" lean-forward="false" selection-start-line="140" selection-start-column="7" selection-end-line="140" selection-end-column="7" />
               <folding>
-                <marker date="1521025915462" expanded="true" signature="921:1157" ph="INSERT INTO `quest`... " />
-                <marker date="1521025915462" expanded="true" signature="1255:1488" ph="INSERT INTO `quest`... " />
-                <marker date="1521025915462" expanded="true" signature="2039:2121" ph="SELECT `ques... quest" />
-                <marker date="1521025915462" expanded="true" signature="2225:2283" ph="UPDATE `quest`... " />
-                <marker date="1521025915462" expanded="true" signature="2706:2888" ph="SELECT `ques... quest" />
-                <marker date="1521025915462" expanded="true" signature="6352:6370" ph="UPDATE `quest`... " />
+                <marker date="1521130237630" expanded="true" signature="921:1157" ph="INSERT INTO `quest`... " />
+                <marker date="1521130237630" expanded="true" signature="1255:1488" ph="INSERT INTO `quest`... " />
+                <marker date="1521130237630" expanded="true" signature="2039:2121" ph="SELECT `ques... quest" />
+                <marker date="1521130237630" expanded="true" signature="2225:2283" ph="UPDATE `quest`... " />
+                <marker date="1521130237630" expanded="true" signature="2706:2888" ph="SELECT `ques... quest" />
+                <marker date="1521130237630" expanded="true" signature="7288:7306" ph="UPDATE `quest`... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuestController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/QuestController.php">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="57" column="41" lean-forward="false" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
-              <folding>
-                <element signature="e#29#55#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pagination.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/Pagination.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="742">
-              <caret line="167" column="29" lean-forward="false" selection-start-line="167" selection-start-column="29" selection-end-line="167" selection-end-column="29" />
-              <folding>
-                <marker date="1521035831483" expanded="true" signature="810:852" ph="SELECT COUNT... " />
-                <marker date="1521035831483" expanded="true" signature="941:1017" ph="SELECT * FRO... ${$table}" />
-                <marker date="1521035831483" expanded="true" signature="2712:2738" ph="SELECT * FRO... ${$table}" />
-                <marker date="1521035831483" expanded="true" signature="3242:3284" ph="SELECT COUNT... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/quest/index.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="71" column="35" lean-forward="false" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
+            <state relative-caret-position="459">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="questChange.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/js/questChange.js">
+      <file leaf-file-name="index.tpl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/user/index.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="71" column="97" lean-forward="false" selection-start-line="71" selection-start-column="97" selection-end-line="71" selection-end-column="97" />
+            <state relative-caret-position="589">
+              <caret line="56" column="56" lean-forward="false" selection-start-line="56" selection-start-column="56" selection-end-line="56" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -85,8 +65,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="90" column="35" lean-forward="false" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
+            <state relative-caret-position="1002">
+              <caret line="334" column="21" lean-forward="false" selection-start-line="334" selection-start-column="21" selection-end-line="334" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -98,6 +78,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -121,6 +102,10 @@
       <find>active</find>
       <find>pagina</find>
       <find>$('.page_number').attr('ttt')</find>
+      <find>p</find>
+      <find>pi</find>
+      <find>create</find>
+      <find>conte</find>
     </findStrings>
     <replaceStrings>
       <replace>$maxItems</replace>
@@ -133,13 +118,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/views/main/index.tpl" />
         <option value="$PROJECT_DIR$/views/main/test.tpl" />
-        <option value="$PROJECT_DIR$/web/js/upload.js" />
         <option value="$PROJECT_DIR$/views/letterLayout.tpl" />
         <option value="$PROJECT_DIR$/views/main/questConfirm.tpl" />
         <option value="$PROJECT_DIR$/views/main/userConfirm.tpl" />
-        <option value="$PROJECT_DIR$/controllers/MainController.php" />
         <option value="$PROJECT_DIR$/views/main/activate.tpl" />
         <option value="$PROJECT_DIR$/components/Mailer.php" />
         <option value="$PROJECT_DIR$/models/UserModel.php" />
@@ -147,14 +129,22 @@
         <option value="$PROJECT_DIR$/views/layout.tpl" />
         <option value="$PROJECT_DIR$/controllers/AuthController.php" />
         <option value="$PROJECT_DIR$/config/Session.php" />
-        <option value="$PROJECT_DIR$/controllers/UserController.php" />
-        <option value="$PROJECT_DIR$/views/user/index.tpl" />
-        <option value="$PROJECT_DIR$/models/QuestModel.php" />
-        <option value="$PROJECT_DIR$/components/Pagination.php" />
         <option value="$PROJECT_DIR$/controllers/QuestController.php" />
-        <option value="$PROJECT_DIR$/views/quest/index.tpl" />
-        <option value="$PROJECT_DIR$/web/css/style.css" />
         <option value="$PROJECT_DIR$/web/js/questChange.js" />
+        <option value="$PROJECT_DIR$/views/quest/index.tpl" />
+        <option value="$PROJECT_DIR$/web/markitup/sets/bbcode/style.css" />
+        <option value="$PROJECT_DIR$/web/markitup/sets/bbcode/set.js" />
+        <option value="$PROJECT_DIR$/web/markitup/sets/default/set.js" />
+        <option value="$PROJECT_DIR$/web/js/upload.js" />
+        <option value="$PROJECT_DIR$/views/main/index.tpl" />
+        <option value="$PROJECT_DIR$/components/SubstText.php" />
+        <option value="$PROJECT_DIR$/controllers/MainController.php" />
+        <option value="$PROJECT_DIR$/components/FileUpload.php" />
+        <option value="$PROJECT_DIR$/components/Pagination.php" />
+        <option value="$PROJECT_DIR$/controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/models/QuestModel.php" />
+        <option value="$PROJECT_DIR$/web/css/style.css" />
+        <option value="$PROJECT_DIR$/views/user/index.tpl" />
       </list>
     </option>
   </component>
@@ -189,8 +179,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+            </path>
+            <path>
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+              <item name="com.intellij.database" type="61db50fb:ScratchProjectViewPane$MyPsiNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,13 +206,12 @@
             <path>
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
               <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
               <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="img" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -217,6 +221,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -244,12 +249,13 @@
       <option name="presentableId" value="Default" />
       <updated>1520861555142</updated>
       <workItem from="1520861563784" duration="25681000" />
-      <workItem from="1521026101481" duration="14649000" />
+      <workItem from="1521026101481" duration="14919000" />
+      <workItem from="1521104369452" duration="19813000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40330000" />
+    <option name="totallyTimeSpent" value="60413000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -260,7 +266,6 @@
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -272,6 +277,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -296,15 +302,77 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/models/QuestModel.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1887">
+          <caret line="112" column="20" lean-forward="false" selection-start-line="112" selection-start-column="20" selection-end-line="112" selection-end-column="20" />
+          <folding>
+            <marker date="1521130237630" expanded="true" signature="921:1157" ph="INSERT INTO `quest`... " />
+            <marker date="1521130237630" expanded="true" signature="1255:1488" ph="INSERT INTO `quest`... " />
+            <marker date="1521130237630" expanded="true" signature="2039:2121" ph="SELECT `ques... quest" />
+            <marker date="1521130237630" expanded="true" signature="2225:2283" ph="UPDATE `quest`... " />
+            <marker date="1521130237630" expanded="true" signature="2706:2888" ph="SELECT `ques... quest" />
+            <marker date="1521130237630" expanded="true" signature="7288:7306" ph="UPDATE `quest`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/QuestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="57" column="41" lean-forward="false" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+          <folding>
+            <element signature="e#29#55#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Pagination.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2839">
+          <caret line="167" column="29" lean-forward="false" selection-start-line="167" selection-start-column="29" selection-end-line="167" selection-end-column="29" />
+          <folding>
+            <marker date="1521129237058" expanded="true" signature="810:852" ph="SELECT COUNT... " />
+            <marker date="1521129237058" expanded="true" signature="941:1017" ph="SELECT * FRO... ${$table}" />
+            <marker date="1521129237058" expanded="true" signature="2712:2738" ph="SELECT * FRO... ${$table}" />
+            <marker date="1521129237058" expanded="true" signature="3242:3284" ph="SELECT COUNT... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/quest/index.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="71" column="35" lean-forward="false" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="90" column="35" lean-forward="false" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/questChange.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="71" column="97" lean-forward="false" selection-start-line="71" selection-start-column="97" selection-end-line="71" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/QuestModel.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3230">
           <caret line="191" column="5" lean-forward="false" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
           <folding>
-            <marker date="1521025915462" expanded="true" signature="921:1157" ph="INSERT INTO `quest`... " />
-            <marker date="1521025915462" expanded="true" signature="1255:1488" ph="INSERT INTO `quest`... " />
-            <marker date="1521025915462" expanded="true" signature="2039:2121" ph="SELECT `ques... quest" />
-            <marker date="1521025915462" expanded="true" signature="2225:2283" ph="UPDATE `quest`... " />
-            <marker date="1521025915462" expanded="true" signature="2706:2888" ph="SELECT `ques... quest" />
-            <marker date="1521025915462" expanded="true" signature="6352:6370" ph="UPDATE `quest`... " />
+            <marker date="1521130237630" expanded="true" signature="921:1157" ph="INSERT INTO `quest`... " />
+            <marker date="1521130237630" expanded="true" signature="1255:1488" ph="INSERT INTO `quest`... " />
+            <marker date="1521130237630" expanded="true" signature="2039:2121" ph="SELECT `ques... quest" />
+            <marker date="1521130237630" expanded="true" signature="2225:2283" ph="UPDATE `quest`... " />
+            <marker date="1521130237630" expanded="true" signature="2706:2888" ph="SELECT `ques... quest" />
+            <marker date="1521130237630" expanded="true" signature="7288:7306" ph="UPDATE `quest`... " />
           </folding>
         </state>
       </provider>
@@ -314,7 +382,7 @@
         <state relative-caret-position="867">
           <caret line="51" column="23" lean-forward="true" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
           <folding>
-            <element signature="e#29#55#0#PHP" expanded="true" />
+            <element signature="e#29#55#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -344,13 +412,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/PHPMailer/src/PHPMailer.php" />
-    <entry file="file://$PROJECT_DIR$/views/main/index.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/main/test.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -393,13 +454,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/MainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="116" column="95" lean-forward="false" selection-start-line="116" selection-start-column="95" selection-end-line="116" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/Mailer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -424,13 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="37" column="48" lean-forward="false" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/UserModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1044">
@@ -441,20 +488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/user/index.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="22" column="61" lean-forward="false" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/admin/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -462,71 +495,176 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/upload.js">
+    <entry file="file://$PROJECT_DIR$/views/quest/index.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="42" column="46" lean-forward="false" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/markitup/sets/bbcode/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="25" lean-forward="false" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/markitup/jquery.markitup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1785">
+          <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/QuestController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
+        <state relative-caret-position="969">
           <caret line="57" column="41" lean-forward="false" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
           <folding>
-            <element signature="e#29#55#0#PHP" expanded="true" />
+            <element signature="e#29#55#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/Pagination.php">
+    <entry file="file://$PROJECT_DIR$/web/markitup/sets/bbcode/set.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="742">
-          <caret line="167" column="29" lean-forward="false" selection-start-line="167" selection-start-column="29" selection-end-line="167" selection-end-column="29" />
-          <folding>
-            <marker date="1521035831483" expanded="true" signature="810:852" ph="SELECT COUNT... " />
-            <marker date="1521035831483" expanded="true" signature="941:1017" ph="SELECT * FRO... ${$table}" />
-            <marker date="1521035831483" expanded="true" signature="2712:2738" ph="SELECT * FRO... ${$table}" />
-            <marker date="1521035831483" expanded="true" signature="3242:3284" ph="SELECT COUNT... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/QuestModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="112" column="20" lean-forward="true" selection-start-line="112" selection-start-column="20" selection-end-line="112" selection-end-column="20" />
-          <folding>
-            <marker date="1521025915462" expanded="true" signature="921:1157" ph="INSERT INTO `quest`... " />
-            <marker date="1521025915462" expanded="true" signature="1255:1488" ph="INSERT INTO `quest`... " />
-            <marker date="1521025915462" expanded="true" signature="2039:2121" ph="SELECT `ques... quest" />
-            <marker date="1521025915462" expanded="true" signature="2225:2283" ph="UPDATE `quest`... " />
-            <marker date="1521025915462" expanded="true" signature="2706:2888" ph="SELECT `ques... quest" />
-            <marker date="1521025915462" expanded="true" signature="6352:6370" ph="UPDATE `quest`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="90" column="35" lean-forward="false" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
+        <state relative-caret-position="272">
+          <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/quest/index.tpl">
+    <entry file="file://$PROJECT_DIR$/web/markitup/sets/default/set.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="71" column="35" lean-forward="false" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
+        <state relative-caret-position="85">
+          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/questChange.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state relative-caret-position="1105">
           <caret line="71" column="97" lean-forward="false" selection-start-line="71" selection-start-column="97" selection-end-line="71" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/main/index.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/upload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="674">
+          <caret line="48" column="8" lean-forward="false" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/DB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/CoreController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="20" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/FileUpload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-629">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/SubstText.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/MainController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1269">
+          <caret line="147" column="47" lean-forward="false" selection-start-line="147" selection-start-column="47" selection-end-line="147" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layout.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="35" column="15" lean-forward="true" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Pagination.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="110" column="39" lean-forward="false" selection-start-line="110" selection-start-column="39" selection-end-line="110" selection-end-column="39" />
+          <folding>
+            <marker date="1521129237058" expanded="true" signature="810:852" ph="SELECT COUNT... " />
+            <marker date="1521129237058" expanded="true" signature="941:1017" ph="SELECT * FRO... ${$table}" />
+            <marker date="1521129237058" expanded="true" signature="2712:2738" ph="SELECT * FRO... ${$table}" />
+            <marker date="1521129237058" expanded="true" signature="3242:3284" ph="SELECT COUNT... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/QuestModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="140" column="7" lean-forward="false" selection-start-line="140" selection-start-column="7" selection-end-line="140" selection-end-column="7" />
+          <folding>
+            <marker date="1521130237630" expanded="true" signature="921:1157" ph="INSERT INTO `quest`... " />
+            <marker date="1521130237630" expanded="true" signature="1255:1488" ph="INSERT INTO `quest`... " />
+            <marker date="1521130237630" expanded="true" signature="2039:2121" ph="SELECT `ques... quest" />
+            <marker date="1521130237630" expanded="true" signature="2225:2283" ph="UPDATE `quest`... " />
+            <marker date="1521130237630" expanded="true" signature="2706:2888" ph="SELECT `ques... quest" />
+            <marker date="1521130237630" expanded="true" signature="7288:7306" ph="UPDATE `quest`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1002">
+          <caret line="334" column="21" lean-forward="false" selection-start-line="334" selection-start-column="21" selection-end-line="334" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/user/index.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="56" column="56" lean-forward="false" selection-start-line="56" selection-start-column="56" selection-end-line="56" selection-end-column="56" />
           <folding />
         </state>
       </provider>

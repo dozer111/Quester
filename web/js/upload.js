@@ -6,7 +6,7 @@ $(function(){
         e.preventDefault();
         var that=$(this);
         var formData=new FormData(that.get(0));
-
+        console.log(formData);
         $.ajax({
             url:"/admin/admin/change",
             type:"POST",
@@ -30,7 +30,7 @@ $(function(){
         e.preventDefault();
         var that=$(this);
         var formData=new FormData(that.get(0));
-
+        console.log(formData);
         $.ajax({
             url:"/main/create",
             type:"POST",

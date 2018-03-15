@@ -1,5 +1,6 @@
 <?php
 namespace controllers;
+use models\QuestModel;
 
 
 /**
@@ -20,7 +21,12 @@ class UserController extends CoreController
      */
     public function actionIndex()
     {
-        return $this->getSmarty()->display('user/index.tpl');
+        $page=(isset($this->getParams()[0]))?$this->getParams()[0]:1;
+        $userId=$this->getSession()->getSession('user')['id'];
+        $questModel=new QuestModel();
+        $userQuestList=$questModel->getQuestListByUser($userId,$page);
+
+        return $this->getSmarty()->display('user/index.tpl',compact('userQuestList'));
     }
 
     /**

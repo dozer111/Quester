@@ -108,6 +108,11 @@ class Pagination
             $db=DB::getInstance();
             $result=[];
 
+            // отладка sql запроса к БД
+            #die(var_dump($itemsQuery.$suffix));
+
+
+
             $result['items']=$db->query($itemsQuery.$suffix)->fetch_all(MYSQLI_ASSOC);
             $count=$db->query($countQuery)->fetch_assoc();
             #echo "<pre>";

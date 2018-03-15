@@ -25,6 +25,7 @@ class MainController extends CoreController
      */
     public function actionCreate()
     {
+        die(var_dump($_POST));
         # 1) Создаем список с нужными типами файлов
         $fileTypes=['fileMimes'=>["image/jpeg","image/png", "image/gif"]];
         // 2 получаем значения формы
@@ -132,10 +133,22 @@ class MainController extends CoreController
 
     public function actionTest()
     {
-       // пока что сделать его ajax для генерации html письма
+      /* // пока что сделать его ajax для генерации html письма
         $id=$this->getParams()[0];
 
-        $this->getSmarty()->display('main/test.tpl',compact('id'));
+        $this->getSmarty()->display('main/test.tpl',compact('id'));*/
+
+      // тестируем изменение размера
+        $fileUpload=new FileUpload();
+        $fileDir='../web/img/';
+        $fileName1='2.jpg';
+        $fileName2='3.jpg';
+        $fileUpload->load($fileDir.$fileName1);
+        $fileUpload->resize('500','400');
+        $fileUpload->save($fileDir.$fileName2);
+
+
+
 
     }
 

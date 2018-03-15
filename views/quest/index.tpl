@@ -1,6 +1,7 @@
 {extends file="../layout.tpl"}
 {block name="head"}
     <script src="/../web/js/questChange.js"></script>
+
 {/block}
 {block name=body}
  <div class="quest_wrapper">
@@ -11,6 +12,7 @@
 Блок, в котором размещаются фильтры новостей
 ============================================================================================
 *}
+
 <div class="quest_filter">
     Отсортировать по:
 
