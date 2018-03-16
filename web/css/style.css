@@ -321,16 +321,47 @@
                 padding-top: 10px;
             }
 
+    .user__quest_item
+    {
 
+        width: 100%;
+        height: 200px;
+        background-color: black;
+        border:2px solid white;
+        color:white;
+
+    }
+    .user__quest_item_left
+    {
+        float: left;
+        width: 80%;
+        height: 100%;
+    }
+    .user__quest_item_status_container
+    {
+    float: right;
+    width:20%;
+    height: 100%;
+    text-align: center;
+    background-color: red;
+    }
     .user__part_right
     {
         float: left;
         width: 80%;
         height: 90%;
+
         border:2px solid red;
     }
     .user__quest_item_image
     {
         width: 200px;
-        height: 200px;
+        height: 100%;
+        float: left;
     }
+    .user__quest_item_status_picture
+    {
+
+        height: 100%;
+    }
+

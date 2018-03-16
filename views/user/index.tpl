@@ -24,10 +24,12 @@
      *}
         {debug}
     <div class="user__part_right">
-        {foreach $userQuestList as $soloQuest}
+        {foreach $userQuestList['items'] as $soloQuest}
+
             <div class="user__quest_item">
+                <div class="user__quest_item_left">
                 <img src="../../web/img/{$soloQuest['quest_picture']}" alt="{$soloQuest['quest_title']}" class="user__quest_item_image">
-                <h2 class="user__quest_item_title">{$soloQuest["quest_title"]}</h2>
+                <a href="/quest/show/{$soloQuest['id']}" class="user__quest_item_title">{$soloQuest["quest_title"]}</a>
                 <p class="user__quest_item_text">{$soloQuest['quest_text']}</p>
 
                 {*
@@ -35,29 +37,22 @@
                                         Правый блок для отображения текущего статуса задания
                 --------------------------------------------------------------------------------------------------------
                 *}
+                </div>
                 <div class="user__quest_item_status_container">
                    {$imageName=''}
-                    {switch $soloQuest['quest_status']}
-                    {case '0'}
-                        {$imageName='statusWait.png'}
-                    {/case}
-                    {case '1'}
-                        {$imageName='statusOk.png'}
-                    {/case}
-                    {case '2'}
-                        {$imageName='statusChanged.png'}
-                    {/case}
-                    {case '3'}
-                        {$imageName='statusNo.png'}
-                    {/case}
-                    {default}
-                        {$imageName='statusWait.png'}
-                    {/switch}
+                  {if $soloQuest['quest_status']=='0'}{$imageName='statusWait.png'}
+                      {elseif $soloQuest['quest_status']=='1'}{$imageName='statusOk.png'}
+                      {elseif $soloQuest['quest_status']=='2'}{$imageName='statusChanged.png'}
+                      {elseif $soloQuest['quest_status']=='3'}{$imageName='statusNo.png'}
+                      {else} {$imageName='statusWait.png'}
+                  {/if}
+                    <img src="../../web/img/quest_status/{$imageName}" alt="" class="user__quest_item_status_picture">
                 </div>
-                <img src="../../web/img/quest_status/{$imageName}" alt="" class="user__quest_item_image">
+
             </div>
         {/foreach}
     </div>
+
 
     {*
     ===================================================================================================================

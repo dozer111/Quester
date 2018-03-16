@@ -1,0 +1,7 @@
+Satisfy Any
+Allow from all
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /dayside/index.php
