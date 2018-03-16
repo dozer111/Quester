@@ -37,8 +37,9 @@
 .quest_container
 {
     width: 100%;
-    height: calc(100% - 6.5rem);
+    height: calc(100% - 3.5rem);
     float: right;
+    position: relative;
 }
 .test
 {
@@ -66,6 +67,7 @@
     background-color: darkmagenta;
     float: left;
     text-align: center;
+
 }
     .quest__filter_ul li
     {
@@ -78,11 +80,14 @@
         font-size: 16px;
         height: 80%;
     }
-
+.page_number
+{
+    display: none;
+}
 .quest_element
 {
     position: relative;
-    height: 25%;
+    height: calc(25% - 10px);
     background-color: chartreuse;
     border: 2px solid black;
 }
@@ -104,9 +109,8 @@
         .pagination_container
         {
             width: auto;
-            height: auto;
+            height: 4rem;
             text-align: center;
-
         }
 
 
@@ -304,8 +308,8 @@
 .inside
 {
     width: 100%;
-    height: 100vh;
-    max-height: calc(100vh - 10px);
+    height:calc(100vh - 50px);
+    max-height: 100vh;
     background-color: silver;
 }
     .user__part_left
@@ -342,7 +346,7 @@
     {
 
         width: 100%;
-        height: 20%;
+        height: calc(20% - 6px);
         background-color: black;
         border:2px solid white;
         color:white;
@@ -366,7 +370,7 @@
     {
         float: left;
         width: 80%;
-        height: 90%;
+        height:100%;
 
         border:2px solid red;
     }
@@ -382,3 +386,19 @@
         height: 100%;
     }
 
+    .user__paginarion
+    {
+        width: 100%;
+
+    }
+    .pagination_main
+    {
+        horiz-align: center;
+
+    }
+
+    .pagination_main_user
+    {
+        margin-left: 60%;
+        transform: translateX(-50%);
+    }

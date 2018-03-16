@@ -40,7 +40,7 @@ $(function(){
             processData:false,
             success:function (data) {
                 console.log(data);
-                $('.quest_status').text(data);
+
             }
 
         });

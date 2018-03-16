@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-03-16 07:34:45
+/* Smarty version 3.1.30, created on 2018-03-16 15:59:45
   from "F:\xampp\htdocs\views\admin\admin\index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5aab6585ae9361_27018660',
+  'unifunc' => 'content_5aabdbe1e241f1_89533406',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bf97b568a771d58171dc9b585fb9fdc68aba7509' => 
     array (
       0 => 'F:\\xampp\\htdocs\\views\\admin\\admin\\index.tpl',
-      1 => 1521025915,
+      1 => 1521212366,
       2 => 'file',
     ),
   ),
@@ -21,22 +21,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../layout.tpl' => 1,
   ),
 ),false)) {
-function content_5aab6585ae9361_27018660 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5aabdbe1e241f1_89533406 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6940414155aab6585ab80c0_49540945', 'head');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13078777965aabdbe1df4c35_95438691', 'head');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19316514245aab6585ae84b8_64486213', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14886591135aabdbe1e22da6_42970801', 'body');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:../../layout.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'head'} */
-class Block_6940414155aab6585ab80c0_49540945 extends Smarty_Internal_Block
+class Block_13078777965aabdbe1df4c35_95438691 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -52,7 +52,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'head'} */
 /* {block 'body'} */
-class Block_19316514245aab6585ae84b8_64486213 extends Smarty_Internal_Block
+class Block_14886591135aabdbe1e22da6_42970801 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -79,10 +79,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             </div>
         </div>
 
-<?php $_smarty_debug = new Smarty_Internal_Debug;
- $_smarty_debug->display_debug($_smarty_tpl);
-unset($_smarty_debug);
-?>
+
 
         <div class="quest_container">
             

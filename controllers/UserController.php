@@ -2,7 +2,7 @@
 namespace controllers;
 use components\Pagination;
 use models\QuestModel;
-
+use components\SubstText;
 
 /**
  * Class UserController
@@ -32,6 +32,7 @@ class UserController extends CoreController
         $questModel=new QuestModel();
         //2 получить список новостей юзера
         $userQuestList=$questModel->getQuestListByUser($userId,$page);
+
         //3 панель пагинации
         $userQuestList['pageList']=Pagination::getButtons($page,$userQuestList['maxPages']);
         $userQuestList['currentPage']=$page;

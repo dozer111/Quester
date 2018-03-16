@@ -59,13 +59,13 @@
 
 </div>
 
+     <div class="pagination_container ">
+         <ul class="pagination_main">
+             <li class="pagination_item"><a class="pagination_link" href="/quest/index/1">1</a></li>
+         </ul>
+     </div>
 
 
-    <div class="pagination_container ">
-        <ul class="pagination_main">
-                <li class="pagination_item"><a class="pagination_link" href="/quest/index/1">1</a></li>
-        </ul>
-    </div>
 <div class="pagination_link_a"></div>
  </div>
     <div class="page_number" ttt="1">no</div>

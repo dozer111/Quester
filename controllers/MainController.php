@@ -25,7 +25,7 @@ class MainController extends CoreController
      */
     public function actionCreate()
     {
-        die(var_dump($_POST));
+
         # 1) Создаем список с нужными типами файлов
         $fileTypes=['fileMimes'=>["image/jpeg","image/png", "image/gif"]];
         // 2 получаем значения формы

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-03-16 12:46:56
+/* Smarty version 3.1.30, created on 2018-03-16 16:09:13
   from "F:\xampp\htdocs\views\user\index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5aabaeb039fe69_00655181',
+  'unifunc' => 'content_5aabde19a87ea8_67292384',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '095694b739013c7d17e3ed32de8010c073bd6595' => 
     array (
       0 => 'F:\\xampp\\htdocs\\views\\user\\index.tpl',
-      1 => 1521200815,
+      1 => 1521212951,
       2 => 'file',
     ),
   ),
@@ -21,18 +21,18 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../layout.tpl' => 1,
   ),
 ),false)) {
-function content_5aabaeb039fe69_00655181 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5aabde19a87ea8_67292384 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2886833365aabaeb039eee6_05291201', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8250387525aabde19a871e3_58690776', "body");
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:../layout.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block "body"} */
-class Block_2886833365aabaeb039eee6_05291201 extends Smarty_Internal_Block
+class Block_8250387525aabde19a871e3_58690776 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -107,44 +107,46 @@ $_smarty_tpl->_assignInScope('imageName', 'statusNo.png');
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
-    </div>
 
 
-    
-    <div class="user__pagination">
-        <ul class="pagination_main">
+        
+        <div class="user__pagination">
+            <ul class="pagination_main_user">
 
 
-        <?php $_smarty_tpl->_assignInScope('countOfPaginationButtnos', count($_smarty_tpl->tpl_vars['userQuestList']->value['pageList']['list']));
+                <?php $_smarty_tpl->_assignInScope('countOfPaginationButtnos', count($_smarty_tpl->tpl_vars['userQuestList']->value['pageList']['list']));
 ?>
-        <?php
+                <?php
 $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? $_smarty_tpl->tpl_vars['countOfPaginationButtnos']->value-1+1 - (0) : 0-($_smarty_tpl->tpl_vars['countOfPaginationButtnos']->value-1)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
 if ($_smarty_tpl->tpl_vars['i']->total > 0) {
 for ($_smarty_tpl->tpl_vars['i']->value = 0, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
 $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration == $_smarty_tpl->tpl_vars['i']->total;?>
-            <?php ob_start();
+                    <?php ob_start();
 echo $_smarty_tpl->tpl_vars['i']->value;
 $_prefixVariable1=ob_get_clean();
 $_smarty_tpl->_assignInScope('pageNumber', $_smarty_tpl->tpl_vars['userQuestList']->value['pageList']['list'][$_prefixVariable1]);
 ?>
-            <?php if ($_smarty_tpl->tpl_vars['pageNumber']->value == $_smarty_tpl->tpl_vars['userQuestList']->value['currentPage']) {?>
-                <a href="/user/index/<?php echo $_smarty_tpl->tpl_vars['pageNumber']->value;?>
+                    <?php if ($_smarty_tpl->tpl_vars['pageNumber']->value == $_smarty_tpl->tpl_vars['userQuestList']->value['currentPage']) {?>
+                        <a href="/user/index/<?php echo $_smarty_tpl->tpl_vars['pageNumber']->value;?>
 "><button  class="pagination_link pagination_button_active" id="<?php echo $_smarty_tpl->tpl_vars['pageNumber']->value;?>
 "> <?php echo $_smarty_tpl->tpl_vars['pageNumber']->value;?>
  </button></a>
-            <?php } else { ?>
-                <a href="/user/index/<?php echo $_smarty_tpl->tpl_vars['pageNumber']->value;?>
+                    <?php } else { ?>
+                        <a href="/user/index/<?php echo $_smarty_tpl->tpl_vars['pageNumber']->value;?>
 ">  <button  class="pagination_link" id="<?php echo $_smarty_tpl->tpl_vars['pageNumber']->value;?>
 "> <?php echo $_smarty_tpl->tpl_vars['pageNumber']->value;?>
  </button></a>
-            <?php }?>
+                    <?php }?>
 
-        <?php }
+                <?php }
 }
 ?>
 
-        </ul>
+            </ul>
+        </div>
     </div>
+
+
 
     </div>
 <?php

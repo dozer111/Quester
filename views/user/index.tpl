@@ -51,30 +51,32 @@
 
             </div>
         {/foreach}
+
+
+        {*
+        ===================================================================================================================
+                                        Пагинация на страничке
+        ===================================================================================================================
+        *}
+        <div class="user__pagination">
+            <ul class="pagination_main_user">
+
+
+                {$countOfPaginationButtnos=count($userQuestList['pageList']['list'])}
+                {for $i=0 to $countOfPaginationButtnos-1}
+                    {$pageNumber=$userQuestList['pageList']['list'][{$i}]}
+                    {if $pageNumber==$userQuestList['currentPage']}
+                        <a href="/user/index/{$pageNumber}"><button  class="pagination_link pagination_button_active" id="{$pageNumber}"> {$pageNumber} </button></a>
+                    {else}
+                        <a href="/user/index/{$pageNumber}">  <button  class="pagination_link" id="{$pageNumber}"> {$pageNumber} </button></a>
+                    {/if}
+
+                {/for}
+            </ul>
+        </div>
     </div>
 
 
-    {*
-    ===================================================================================================================
-                                    Пагинация на страничке
-    ===================================================================================================================
-    *}
-    <div class="user__pagination">
-        <ul class="pagination_main">
-
-
-        {$countOfPaginationButtnos=count($userQuestList['pageList']['list'])}
-        {for $i=0 to $countOfPaginationButtnos-1}
-            {$pageNumber=$userQuestList['pageList']['list'][{$i}]}
-            {if $pageNumber==$userQuestList['currentPage']}
-                <a href="/user/index/{$pageNumber}"><button  class="pagination_link pagination_button_active" id="{$pageNumber}"> {$pageNumber} </button></a>
-            {else}
-                <a href="/user/index/{$pageNumber}">  <button  class="pagination_link" id="{$pageNumber}"> {$pageNumber} </button></a>
-            {/if}
-
-        {/for}
-        </ul>
-    </div>
 
     </div>
 {/block}

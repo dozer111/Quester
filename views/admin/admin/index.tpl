@@ -30,7 +30,7 @@
             </div>
         </div>
 
-{debug}
+
 
         <div class="quest_container">
             {*
