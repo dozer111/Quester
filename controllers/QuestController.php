@@ -50,12 +50,39 @@ class QuestController extends CoreController
     {
         $page=$_POST['page'];
         # если на вход пришла только страница
+        /**
+         * =========================================================================================================
+         * =========================================================================================================
+         *                              Важно:
+         * Сортировка имеет 3 параметра:
+         * filter1 ==> сортировка по емаилу
+         * filter2 ==> сортировка по пользователю
+         * filter3 ==> сортировка по дате !!!!!!!!!!!!!!!!!!!!!
+         * Сортировка по дате может иметь такие значения (всего 5 вариантов)
+         * -------------------------------|При получении данных с questChange.js эти 3 будут приняты как первичные
+         * no                             |сортировка по всем записям
+         * email                          |сортировка по значению выбранного email
+         * id                             |сортировка по значению выбранного id пользователя
+         * -------------------------------|
+         * -------------------------------|Вторичные варианты сортировки, применяются как дополнение к 3 предыдущим
+         * ASC                            |
+         * DESC                           | Дальше в прим 1 будет длительная проверка на значение, потому что
+         * -------------------------------| в метод getItemsWithDeepPagination должно передатся только корректное значение ордера
+         * =========================================================================================================
+         * =========================================================================================================
+         */
+        if($_POST['filter1']=='false' && $_POST['filter2']=='false' ) {
+            $requestArray=['where'=>'quest_activation_status=1','leftJoin'=>['colums'=>['`user`.`user_login`'],'table'=>'user',
+                'on'=>'`quest`.`quest_author`=`user`.`id`']];
+           // прим 1
+            if($_POST['filter3']!='false' && $_POST['filter3']!='email' && $_POST['filter3']!='id' )
+                $quests = Pagination::getItemsWithDeepPagination('quest', $page,$requestArray,$_POST['filter3'],4);
+            else $quests = Pagination::getItemsWithDeepPagination('quest', $page,$requestArray,'DESC',4);
 
-        if($_POST['filter1']=='false' && $_POST['filter2']=='false' && $_POST['filter3']=='false') {
-            $requestArray=['where'=>'quest_activation_status=1'];
-            $quests = Pagination::getItemsWithDeepPagination('quest', $page,$requestArray,'DESC',4);
+
             $quests['pages']=Pagination::getButtons($page,$quests['maxPages']);
             $quests['currentPage']=$page;
+            $quests['currentFilter']='no';
             echo json_encode($quests);
         }
         # делаем выборку по фильру @mail
@@ -65,9 +92,14 @@ class QuestController extends CoreController
             $requestArray=['where'=>"quest_email='".$test."'"];
             $requestArray['andWhere']=['quest_activation_status=1'];
 
-            $quests=Pagination::getItemsWithDeepPagination('quest',$page,$requestArray,'DESC',4);
+            if($_POST['filter3']!='false' && $_POST['filter3']!='email' && $_POST['filter3']!='id')
+                $quests = Pagination::getItemsWithDeepPagination('quest', $page,$requestArray,$_POST['filter3'],4);
+            else $quests = Pagination::getItemsWithDeepPagination('quest', $page,$requestArray,'DESC',4);
+
+
             $quests['pages']=Pagination::getButtons($page,$quests['maxPages']);
             $quests['currentPage']=$page;
+            $quests['currentFilter']='email';
             echo json_encode($quests);
         }
 
@@ -75,9 +107,12 @@ class QuestController extends CoreController
         elseif ($_POST['filter2']!='false')
         {
             $requestArray=['where'=>"quest_author='".$_POST['filter2']."'"];
-            $quests=Pagination::getItemsWithDeepPagination('quest',$page,$requestArray,'DESC',4);
+            if($_POST['filter3']!='false' && $_POST['filter3']!='email' && $_POST['filter3']!='id' )
+                $quests = Pagination::getItemsWithDeepPagination('quest', $page,$requestArray,$_POST['filter3'],4);
+            else $quests = Pagination::getItemsWithDeepPagination('quest', $page,$requestArray,'DESC',4);
             $quests['pages']=Pagination::getButtons($page,$quests['maxPages']);
             $quests['currentPage']=$page;
+            $quests['currentFilter']='id';
             echo json_encode($quests);
         }
 

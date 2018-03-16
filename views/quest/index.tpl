@@ -14,12 +14,9 @@
 *}
 
 <div class="quest_filter">
-    Отсортировать по:
-
-
-        <ul class="">
-            <li><button class="btn btn-primary" id="filter_date_asc" >С конца</button></li>
-            <li><button class="btn btn-primary"  id="filter_date_desc" >С начала</button></li>
+        <ul class="quest__filter_ul">
+            <li><button class="btn btn-primary filter_date_desc" >С конца</button></li>
+            <li><button class="btn btn-primary filter_date_asc" >С начала</button></li>
 
         </ul>
 
@@ -71,11 +68,10 @@
     </div>
 <div class="pagination_link_a"></div>
  </div>
-    <div class="page_number" ttt="1">
-
-    </div>
+    <div class="page_number" ttt="1">no</div>
+    {*
     <pre>
     <div class="test">
 
     </div>
-{/block}
+*}{/block}

@@ -36,7 +36,8 @@ $(function(){
         var page=(isNaN(page)!=true)?page:1;
         var filter1=(param1=='00')?false:param1;
         var filter2=(param2=='00')?false:param2;
-        var filter3=(param3=='00')?false:param3;
+        var filter3=(param3=='no')?false:param3;
+
         //alert('filter1 ==> '+filter1+' filter2 ==> '+filter2+' filter3 ==> '+filter3);
 
 
@@ -60,6 +61,7 @@ $(function(){
 
                          //кнопки пагинации
                          // к-во кнопок
+
                         var countPaginationButton = clientData.pages.list.length;
                         // pagination ==> HTML код для ссылок на пагинацию
                         var pagination = '';
@@ -94,13 +96,22 @@ $(function(){
                             itemString += "<a class='quest_link' href='/quest/show/"+clientData.items[i].id+"'>" + clientData.items[i].quest_title + "</a>";
                             itemString += "<p class='quest_text'>" + clientData.items[i].quest_text + "</p>";
                             // нижний блок с автором и/или @mail
-                            itemString += "<h2 class='filter_userId'>" + clientData.items[i].quest_author + "</h2>";
-                            itemString += "<h2 class='filter_email'>" + clientData.items[i].quest_email + "</h2>";
+                            if(clientData.items[i].quest_author!='0')
+                            {
+                                itemString += "<h2 class='filter_userId'>" + clientData.items[i].user_login + "</h2>";
+                            }
+                            else
+                            {
+                                itemString += "<h2 class='filter_userId'>Guest </h2>";
+                                itemString += "<h2 class='filter_email'>" + clientData.items[i].quest_email + "</h2>";
+                            }
+
                             itemString+="</div>";
                         }
                         $('.quest_container').text(data);
                         $('.quest_container').html(itemString);
-                        $('.page_number').attr('ttt',page);
+                        // console.log(clientData);
+                        $('.page_number').attr('ttt',page).text(clientData.currentFilter);
                             
                             
                             
@@ -119,16 +130,22 @@ $(function(){
 
 
 
-    load_data(page,'00','00','00');
+    load_data(page,'00','00',$('.page_number').text());
 // ==================================================================================================================
 //                      Переход по ссылкам
 // ==================================================================================================================
     $(document).on('click','.pagination_link',function () {
         var pageToGoNumber=$(this).attr('id');
-        load_data(pageToGoNumber,'00','00','00');
+        var filter=$('.page_number').text();
+        load_data(pageToGoNumber,'00','00',filter);
     });
 
-
+//====================================================================================================================
+// Примечание к фильтрации:
+// При клике на вход дополнительно считываетсЯ информация с .page_number:
+//    ttt --> номер текущей странички
+//    текст внутри --> фильтр данных
+// ====================================================================================================================
 
 
 
@@ -136,8 +153,9 @@ $(function(){
 //                     Фильтрация по @mail
 // ==================================================================================================================
    $(document).on('click','.filter_email',function () {
+       var filter=$('.page_number').text();
        var email=$(this).text();
-       load_data(page,email,'00','00');
+       load_data(page,email,'00',filter);
    });
 
 // ==================================================================================================================
@@ -145,10 +163,59 @@ $(function(){
 // ==================================================================================================================
     $(document).on('click','.filter_userId',function () {
        var userId=$(this).text();
-       load_data(page,'00',userId,'00');
+        var filter=$('.page_number').text();
+       load_data(page,'00',userId,filter);
 
     });
 
+
+
+// ==================================================================================================================
+//                      Дополнитеная ASC/DESC фильтрация
+// ==================================================================================================================
+    $(document).on('click','.filter_date_asc',function () {
+
+        var userId=$(this).text();
+        var filter=$('.page_number').text();
+        switch (filter)
+        {
+            case 'no':
+                load_data(page,'00','00','ASC');
+            break;
+            case 'email':
+                var emailName=$('.filter_email:first-child').text();
+                load_data(page,emailName,'00','ASC');
+            break;
+            case 'id':
+                var idNumber=$('.filter_userId:first-child').text();
+                load_data(page,'00',idNumber,'ASC');
+            break;
+        }
+    });
+
+    $(document).on('click','.filter_date_desc',function () {
+
+        var userId=$(this).text();
+        var filter=$('.page_number').text();
+
+        switch (filter)
+        {
+            case 'no':
+                // alert('no');
+                load_data(page,'00','00','DESC');
+                break;
+            case 'email':
+                // alert('email');
+                var emailName=$('.filter_email:first-child').text();
+                load_data(page,emailName,'00','DESC');
+                break;
+            case 'id':
+                // alert('id');
+                var idNumber=$('.filter_userId:first-child').text();
+                load_data(page,'00',idNumber,'DESC');
+                break;
+        }
+    });
 
 
 
