@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Мар 16 2018 г., 16:26
+-- Время создания: Мар 19 2018 г., 11:41
 -- Версия сервера: 10.1.30-MariaDB
 -- Версия PHP: 7.2.2
 
@@ -582,19 +582,21 @@ CREATE TABLE `user` (
   `user_password` varchar(255) NOT NULL,
   `user_status` tinyint(4) NOT NULL DEFAULT '0',
   `user_avatar` varchar(255) NOT NULL DEFAULT 'default_user.png',
-  `user_activation` varchar(255) NOT NULL
+  `user_activation_hash` varchar(255) NOT NULL,
+  `user_activation_status` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `user`
 --
 
-INSERT INTO `user` (`id`, `user_login`, `user_email`, `user_password`, `user_status`, `user_avatar`, `user_activation`) VALUES
-(1, 'test5', 'test5@test5.test5', '$2y$10$iosC0TMPEuFWhBQT/rSvK.idIw.NKJl01/WmGX1mCpew./7j7H7TS', 1, 'default_user.png', ''),
-(2, 'test1', 'test1@test1.test1', '$2y$10$GgzoEz1hdfhAMdKIo3AgXevjgzpUSe2JFPatCQPb24RtcIJIb4XU6', 0, 'default_user.png', ''),
-(3, 'test2', 'test2@test2.test2', '$2y$10$B4k0z5dKupbM6QsAa4YuzO7nSS6w1gRNwSVJ3axPHIBPg0qN/syQC', 0, 'default_user.png', ''),
-(4, 'test3', 'test3@test3.test3', '$2y$10$u/.zSmHX0xA0qy/X7ExlFeiyK0iuc.tHsegub8QMwfM3W5G9Zmfqa', 0, 'default_user.png', ''),
-(5, 'test4', 'test4@test4.test4', '$2y$10$cNH8d19eIQXIsM7cNvdj3uYC060oq4pmF2AHU5oeh1D6eFzCY6tG6', 0, 'default_user.png', '');
+INSERT INTO `user` (`id`, `user_login`, `user_email`, `user_password`, `user_status`, `user_avatar`, `user_activation_hash`, `user_activation_status`) VALUES
+(1, 'test5', 'test5@test5.test5', '$2y$10$iosC0TMPEuFWhBQT/rSvK.idIw.NKJl01/WmGX1mCpew./7j7H7TS', 1, 'default_user.png', '', 0),
+(2, 'test1', 'test1@test1.test1', '$2y$10$GgzoEz1hdfhAMdKIo3AgXevjgzpUSe2JFPatCQPb24RtcIJIb4XU6', 0, 'default_user.png', '', 0),
+(3, 'test2', 'test2@test2.test2', '$2y$10$B4k0z5dKupbM6QsAa4YuzO7nSS6w1gRNwSVJ3axPHIBPg0qN/syQC', 0, 'default_user.png', '', 0),
+(4, 'test3', 'test3@test3.test3', '$2y$10$u/.zSmHX0xA0qy/X7ExlFeiyK0iuc.tHsegub8QMwfM3W5G9Zmfqa', 0, 'default_user.png', '', 0),
+(5, 'test4', 'test4@test4.test4', '$2y$10$cNH8d19eIQXIsM7cNvdj3uYC060oq4pmF2AHU5oeh1D6eFzCY6tG6', 0, 'default_user.png', '', 0),
+(6, 'admin', 'test@test1.test2', '$2y$10$qsAGc.UKuI9lplKJvRShe.E0IfW5ir7gZ6VXSrDCNaCIwCkNJdNqK', 1, 'default_user.png', '', 1);
 
 --
 -- Индексы сохранённых таблиц
@@ -638,7 +640,7 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
